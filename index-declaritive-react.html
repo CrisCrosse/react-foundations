@@ -14,12 +14,17 @@
     }
 
     function HomePage() {
+        const [likes, setLikes] = React.useState(0);
+        function handleClick() {
+            setLikes(likes + 1)
+        }
         const names = ['Ada Lovelace', 'Grace Hooper', 'Margaret Hamilton']
         return <div>
             <Header title={"3 key phases of software"} />
             <ul>
                 {names.map(name => <li key={name}>{name}</li>)}
             </ul>
+            <button onClick={handleClick}>Likes {likes}</button>
         </div>
     }
 
